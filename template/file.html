@@ -1,0 +1,21 @@
+{% extends "basic.html" %} 
+{% block title %}File{% endblock %}
+{% block body %}
+
+<!--See File Uploaded-->
+{% comment %} {% if uploaded %}
+<h2>file uploaded successfully</h2>
+{% else %}
+<h2>Please add CSV file only</h2>
+<a href="/file">Try Again</a>
+{% endif %} {% endcomment %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label for="file">Choose a CSV File containing emails : </label>
+
+  <input type="file" id="file" name="myfile" accept=".csv" />
+  <button>Submit</button>
+</form>
+
+{% endblock body %}

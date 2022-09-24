@@ -1,0 +1,19 @@
+{% extends 'basic.html' %} 
+{% block title %}Emails {% endblock %}
+{% block body %}
+<h2><a href="invalid">Click here to view Invalid Emails</a></h2>
+
+<h1>Valid Email List</h1>
+<ul>
+  {% for email in valid_list %}
+  <li>{{ email }}</li>
+  {% endfor %}
+</ul>
+
+
+<!-- <table>
+  <tr>
+    <th></th>
+  </tr>
+</table> -->
+{% endblock %}

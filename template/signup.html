@@ -1,0 +1,46 @@
+{% extends 'basic.html' %} 
+{% block title %} Sign Up {% endblock %}
+{% block body %}
+<h1>This is Sign Up.html</h1>
+
+<form method="post" action="/signup">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="su_username" class="form-label">Username : </label>
+    <input
+      type="text"
+      class="form-control"
+      id="su_username"
+      name="su_username"
+      hx-post="{% url 'check_username' %}"
+      hx-target="#username-check"
+      hx-trigger="keyup"
+      placeholder="Please enter your Username"
+      aria-describedby="textHelp"
+    />
+  </div>
+  <div id="username-check">
+
+  </div>
+
+  <div id="username-check"></div>
+  <div class="mb-3">
+    <label for="su_password" class="form-label">Password : </label>
+    <input
+      type="password"
+      class="form-control"
+      name="su_password"
+      placeholder="Please enter your password"
+      id="su_password"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> 
+
+<!-- <script>
+  function checkuser() {
+    let un = getElementById("su_username").value();
+  }
+</script> -->
+
+{% endblock body %}

@@ -1,0 +1,10 @@
+{% extends 'basic.html' %} 
+{% block title %}Emails {% endblock %}
+{% block body %}
+<h1>Invalid Email's</h1>
+<ul>
+    {% for email in invalid_list %}
+    <li>{{ email }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

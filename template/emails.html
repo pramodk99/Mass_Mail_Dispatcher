@@ -1,0 +1,21 @@
+{% extends 'basic.html' %} 
+{% block title %} Email {% endblock %}
+{% block body %}
+<h1>Send Multiple Mails in one click</h1>
+<form action="/send" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div>
+    <label for="subject">Subject : </label>
+    <input id="subject" name="subject" type="text" />
+  </div>
+  <div>
+    <label for="msg">Message : </label>
+    <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+  </div>
+  <div>
+    <label for="attach">Choose File : </label>
+    <input id="attach" name="attach" type="file" />
+  </div>
+  <button>Submit!</button>
+</form>
+{% endblock body %}
